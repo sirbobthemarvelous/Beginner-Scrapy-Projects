@@ -1,0 +1,11 @@
+(make sure you've installed python3 and pip3)
+pip3 install virtualenv
+
+python3 -m venv name-of-folder
+you make virtual environments so upgrading your packages don't break your old projects
+
+source venv/bin/activate
+activate the venv so that pip3 installs will be installed into the venv folder which will be project specific
+
+pip3 install scrapy
+
