@@ -29,3 +29,4 @@ scrapy crawl nameOfSpider
 
 (in order to go into dom manipulation mode run)
 scrapy shell 
+resonse.css('li.next a ::attr(href)').get() [this is how you get the pagination links]
