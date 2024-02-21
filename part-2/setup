@@ -4,8 +4,28 @@ pip3 install virtualenv
 python3 -m venv name-of-folder
 you make virtual environments so upgrading your packages don't break your old projects
 
-source venv/bin/activate
+source name-of-folder/bin/activate
 activate the venv so that pip3 installs will be installed into the venv folder which will be project specific
 
 pip3 install scrapy
 
+scrapy startproject nameOfProject
+
+scrapy genspider bookspider book.toscrape.com
+aka
+scrapy genspider nameOfSpider website.toScrape.com
+
+use dom manipulation to get info
+like
+response
+books = response.css('article.product_pod')
+book = books[0]
+book.css('h3 a::text').get()
+book.css('.product_price .price_color::text').get()
+book.css('h3 a').attrib['href'] (this is to get the url link)
+
+to run the spider make sure you're outside the spider folder and run
+scrapy crawl nameOfSpider
+
+(in order to go into dom manipulation mode run)
+scrapy shell 
